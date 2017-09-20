@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+
+    <package name="candidates" namespace="/candidates" extends="struts-default">
+        <action name="addCandidate" method="add" class="com.movies.controller.CandidateAction">
+            <result name="post">success.jsp</result>
+            <result name="get">addcandidate.jsp</result>
+            <result name="error">error.jsp</result>
+            <result name="input">addcandidate.jsp</result>
+        </action>
+        <action name="listCandidate" method="list" class="com.movies.controller.CandidateAction">
+            <result name="success">listcandidate.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="viewCandidate" method="view" class="com.movies.controller.CandidateAction">
+            <result name="success">viewcandidate.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="deleteCandidate" method="delete" class="com.movies.controller.CandidateAction">
+            <result name="success">success.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="editCandidate" method="edit" class="com.movies.controller.CandidateAction">
+            <!--<param name="edit">id</param>-->
+            <result name="get">editcandidate.jsp</result>
+            <result name="post">success.jsp</result>
+            <result name="error">error.jsp</result>
+            <result name="input">editcandidate.jsp</result>
+        </action>        
+    </package>
+   
+   
+    
+    <package name="default" extends="struts-default">
+        <action name="LogInActionCandidate" method="logInCandidate" class="com.movies.controller.LoginAction">
+            <result name="success">index.jsp</result>
+            <result name="error">index.jsp</result>
+            <result name="input">index.jsp</result>
+        </action>
+             
+        <action name="LogOutAction" method="logOut" class="com.movies.controller.LoginAction">
+            <result name="success">index.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+    </package>
+</struts>
